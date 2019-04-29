@@ -1,0 +1,264 @@
+// This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
+//************************NAVBAR TWEEKS************************
+//aligns menu items to the right
+.assistive-text {
+  height: 1px; 
+  width: 1px; 
+  position: absolute; 
+  overflow: hidden; 
+  top: -10px;
+}
+
+
+#navbarNavDropdown {
+  justify-content: flex-end;
+}
+
+//gets rid of round edges on child menu elements
+.dropdown-menu {
+	border-radius: 0;
+}
+
+//force underline on sub-menu hover
+.dropdown-item:focus, .dropdown-item:hover {
+	text-decoration: underline;
+}
+
+//prevent default fade to non-accessible on pages that are not the active page
+.navbar-dark .navbar-nav .nav-link {
+  color: $dark-gray;
+}
+
+#the-menu {
+	background-color: #efefef !important;
+}
+
+li.active {
+	text-decoration: underline;
+	color: $dark-gray;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+
+//************************BASIC CONTENT CHOICES************************
+article a {
+	text-decoration: underline;
+}
+
+html, body, p, h1, h2, h3, h4, h5 {
+	font-family: "LatoWeb","Helvetica Neue",Helvetica,Arial,sans-serif
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: 200;
+    margin: 15px 0;
+    color: #666;
+}
+
+#secondary img, article img, figure, img, img.wp-post-image {
+	margin-bottom: 1em;
+}
+
+p {
+	background-color: $white;
+	padding: 1em .4em;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #2a2b2e;
+  -webkit-font-smoothing: antialiased;
+  margin: 12px 0;
+}
+
+.table {
+	background-color: $white;
+}
+
+.jumbotron {
+	border-radius: 0;
+}
+
+.custom-header-img {
+	height: 40vw;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+//BACKGROUND
+#full-width-page-wrapper {
+	background-image: url(../imgs/topo-right-30.png);
+	background-repeat: no-repeat;
+	background-position: right;
+	background-size: 400px 800px;
+	background-attachment: fixed;
+}
+
+
+//SUB ORGS
+.jumbotron.water {
+  background: url(../imgs/topographic-background-2-white.svg), linear-gradient(rgba(0, 179, 190, 0), rgba(158, 158, 158, 1));
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  background-color: rgba(0,0,0,0);
+}
+
+.water .card-img-top {
+	border-radius: 50%;
+	border: 2px solid $white;
+	width: 80%;
+	height: auto;
+	margin: 0 auto;
+}
+
+.water .card-title {
+	background-color: $white;
+	padding: .2em;
+	display: inline-block;
+	text-align: center;
+	font-size: 1.5em;
+	height: 3em;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.water .card {
+	height: 100%;
+	background-color: rgba(0,0,0,0);
+	border: none;
+}
+
+//FOOTER 
+#wrapper-footer {
+	padding-top: 5em;
+	background-color: $dark-gray;	
+}
+
+.footer-widget{
+	background-color: $dark-gray;
+	padding-top: 3em;
+	color: $white;
+	line-height: 1em;
+}
+
+.widgetizedArea p {
+	background-color: $dark-gray;
+	color: $white;
+	padding: .2em 0;
+	margin: 0;
+}
+
+.widgetizedArea h3 {
+	color: $gold;
+	font-size: 1.2em;
+}
+
+//JUST BLOCKQUOTE
+//from https://codepen.io/iPawan/pen/emrPKP
+blockquote{
+  display:block;
+  background: #fff;
+  padding: 15px 20px 15px 45px;
+  margin: 0 0 20px;
+  position: relative;
+  
+  /*Font*/
+  font-size: 1.2em;
+  line-height: 1.2;
+  color: #666;
+
+
+  /*Borders - (Optional)*/
+  border-left-style: solid;
+  border-left-width: 15px;
+  border-right-style: solid;
+  border-right-width: 2px;    
+}
+
+blockquote::before{
+  content: "\201C"; /*Unicode for Left Double Quote*/
+  
+  /*Font*/
+  font-family: Georgia, serif;
+  font-size: 60px;
+  font-weight: bold;
+  color: #999;
+  
+  /*Positioning*/
+  position: absolute;
+  left: 10px;
+  top:5px; 
+}
+
+blockquote::after{
+  /*Reset to make sure*/
+  content: "";
+}
+
+blockquote a{
+  text-decoration: none;
+  background: #eee;
+  cursor: pointer;
+  padding: 0 3px;
+  color: #c76c0c;
+}
+
+blockquote a:hover{
+ color: #666;
+}
+
+blockquote em{
+  font-style: italic;
+}
+
+  /*Default Color Palette*/
+blockquote.default{ 
+  border-left-color: #656d77;
+  border-right-color: #434a53;  
+}
+
+
+//BOOTSTRAP BREAKOUT
+
+.break-out{
+  width: 100vw;
+  position: relative;
+  left: calc(-1 * (100vw - 100%) / 2);
+  color: rgba(0,0,0,.6);
+  display: block;
+}
+
+.flexy {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+/* LEFT SIDE BAR */
+
+#left-sidebar ul {
+  list-style: none;
+}
+
+#left-sidebar li {
+  margin: 12px 0;
+}
+
+#left-sidebar li a {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+#left-sidebar a:hover {
+    background: #f2f2f2;
+}
