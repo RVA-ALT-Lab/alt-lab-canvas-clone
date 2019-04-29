@@ -23,9 +23,9 @@ if (is_active_sidebar('left-sidebar' ))	{
 	  dynamic_sidebar( 'left-sidebar' ); 
 	} else {
 	   if ( current_user_can('editor') || current_user_can('administrator') ){
-	   	 echo '<div class="alert alert-info" role="alert">Put a Menu in the left sidebar as a widget to further customize.</div>';
+	   	 echo '<div class="alert alert-info" role="alert">Put a Menu in the left sidebar as a widget to further customize.</div>';//alert about using the menu to do fancier stuff
 	   }
-	  echo '<ul>';
+	  echo '<ul id="default-menu">';
 	  $args = array(
         'depth'        => 0,
          'title_li'     => '',

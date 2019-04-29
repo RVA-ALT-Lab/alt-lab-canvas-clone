@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Left Sidebar Layout
+ * Template Name: CANVAS LEFT SIDEBAR LAYOUT
  *
  * This template can be used to override the default template and sidebar setup
  *
@@ -22,6 +22,12 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<div
 				class="col-md-8 content-area"
 				id="primary">
+				<?php 
+					if ( current_user_can('editor') || current_user_can('administrator') ){
+						edit_post_link( 'Edit', '<div class="edit-header"><div class="edit-btn">', '<i class="fa fa-pencil" aria-hidden="true"></i></div></div>' );
+					}
+
+				?>
 
 				<main class="site-main" id="main" role="main">
 

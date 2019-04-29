@@ -66,6 +66,7 @@ li.active {
 .navbar .fa-chevron-right {
   margin-right: 5px;
   margin-left: 5px;
+  color: #9a9a9e;
 }
 
 //************************BASIC CONTENT CHOICES************************
@@ -74,7 +75,9 @@ article a {
 }
 
 html, body, p, h1, h2, h3, h4, h5 {
-	font-family: "LatoWeb","Helvetica Neue",Helvetica,Arial,sans-serif
+	font-family: "LatoWeb","Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1 {
@@ -82,10 +85,16 @@ h1 {
     font-weight: 200;
     margin: 15px 0;
     color: #666;
+    line-height: 1.5;
 }
 
 #secondary img, article img, figure, img, img.wp-post-image {
 	margin-bottom: 1em;
+}
+
+figure {
+  border: 1px solid #efefef;
+  padding: 7px;
 }
 
 p {
@@ -277,13 +286,14 @@ blockquote.default{
   display: block;
   width: 100%;
   height: auto;
-  padding: 5px;
+  padding: 5px 9px;
   border-radius: 3px;
 }
 
 #left-sidebar li a[aria-current] {
-  background-color: #63656a;
+  background-color: $dark-gray;
   color: #fff;
+  font-weight: 600;
 }
 
 #left-sidebar a:hover {
@@ -301,4 +311,42 @@ blockquote.default{
 }
 .hidden {
   opacity: 0;
+}
+
+
+
+.edit-header {
+  text-align: right;
+  border-bottom: 1px solid #efefef;
+}
+
+.edit-btn {
+    background: #f5f5f5;
+    color: #2D3B45;
+    border: 1px solid;
+    border-color: #C7CDD1;
+    border-radius: 3px;
+    transition: background-color 0.2s ease-in-out;
+    display: inline-block;
+    position: relative;
+    padding: 8px 14px;
+    margin-bottom: 0;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 20px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    text-decoration: none;
+    overflow: hidden;
+    text-shadow: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-bottom: 7px;
+}
+
+.edit-btn i {
+  margin-left: 5px;
 }
