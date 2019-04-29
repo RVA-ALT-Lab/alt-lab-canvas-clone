@@ -45,6 +45,16 @@ li.active {
   z-index: 100;
 }
 
+.navbar>.container, .navbar>.container-fluid {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#menu-hider {
+  display: inline-block;
+  margin-right: 20px;
+  color: #4e4e4e;
+}
 
 //************************BASIC CONTENT CHOICES************************
 article a {
@@ -259,6 +269,16 @@ blockquote.default{
   border-radius: 3px;
 }
 
+#left-sidebar li a[aria-current] {
+  background-color: #63656a;
+  color: #fff;
+}
+
 #left-sidebar a:hover {
     background: #f2f2f2;
+}
+
+
+.hidden {
+  opacity: 0;
 }

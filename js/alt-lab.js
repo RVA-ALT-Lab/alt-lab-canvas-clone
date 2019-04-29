@@ -17,3 +17,12 @@ function myFunction() {
     navbar.classList.remove("sticky");
   }
 }
+
+
+let navHider = document.getElementById('menu-hider');
+navHider.addEventListener('click', menuClassChanger);
+
+function menuClassChanger (){
+	let menu = document.getElementById('left-sidebar');
+	menu.classList.toggle("hidden")
+}

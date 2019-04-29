@@ -37,7 +37,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<?php if ( 'container' == $container ) : ?>
 			<div class="container" >
 		<?php endif; ?>
-
+        <button id="menu-hider" aria-label="Hide Courses Navigation Menu" title="Hide Courses Navigation Menu"><i class="fa fa-bars" aria-hidden="true"></i></button>
 					<!-- Your site title as branding in the menu -->
 					<?php if ( ! has_custom_logo() ) { ?>
 
