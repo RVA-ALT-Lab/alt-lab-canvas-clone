@@ -20,7 +20,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<?php get_sidebar( 'left' ); ?>
 
 			<div
-				class="<?php if ( is_active_sidebar( 'left-sidebar' ) ) : ?>col-md-8<?php else : ?>col-md-12<?php endif; ?> content-area"
+				class="col-md-8 content-area"
 				id="primary">
 
 				<main class="site-main" id="main" role="main">
