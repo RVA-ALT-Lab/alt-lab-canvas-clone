@@ -155,3 +155,37 @@ function bannerMaker(){
 if ( ! current_user_can( 'manage_options' ) ) {
     show_admin_bar( false );
 }
+
+
+// Breadcrumbs via https://www.thewebtaylor.com/articles/wordpress-creating-breadcrumbs-without-a-plugin
+
+function custom_breadcrumbs(){
+    global $post;
+    if( $post->post_parent ){
+
+                // If child page, get parents
+                $anc = get_post_ancestors( $post->ID );
+
+                // Get parents in the right order
+                $anc = array_reverse($anc);
+
+                // Parent page loop
+                if ( !isset( $parents ) ) $parents = null;
+                $parents .= '';
+                foreach ( $anc as $ancestor ) {
+                    $parents .= '<span class="item-parent item-parent-' . $ancestor . '"> <i class="fa fa-chevron-right" aria-hidden="true"></i> <a class="crumb bread-parent bread-parent-' . $ancestor . '" href="' . get_permalink( $ancestor ) . '" title="' . get_the_title($ancestor) . '">' . get_the_title($ancestor) . '</a></span>';
+                    $parents .= '<span class="separator separator-' . $ancestor . '"> <i class="fa fa-chevron-right" aria-hidden="true"></i> </span>';
+                }
+
+                // Display parent pages
+                echo $parents;
+
+                // Current page
+                echo '<span class="crumb item-current item-' . $post->ID . '"><span title="' . get_the_title() . '"> ' . get_the_title() . '</strong></span>';
+            } else {
+
+                // Just display current page if not parents
+                echo '<i class="fa fa-chevron-right" aria-hidden="true"></i> <span class="crumb item-current item-' . $post->ID . '">' . get_the_title() . '</span>';
+
+            }
+    }

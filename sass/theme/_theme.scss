@@ -54,6 +54,18 @@ li.active {
   display: inline-block;
   margin-right: 20px;
   color: #4e4e4e;
+  border: none;
+  background-color: #efefef;
+  transition: all .2s;
+}
+
+#menu-hider:hover {
+  background-color: #b9b9b9;
+}
+
+.navbar .fa-chevron-right {
+  margin-right: 5px;
+  margin-left: 5px;
 }
 
 //************************BASIC CONTENT CHOICES************************
@@ -278,7 +290,15 @@ blockquote.default{
     background: #f2f2f2;
 }
 
+#left-sidebar ul.children {
+  padding-inline-start: 20px;
+}
 
+.crumb {
+  font-size: 1.2em;
+  font-weight: 200;
+  margin: 0 4px;
+}
 .hidden {
   opacity: 0;
 }
