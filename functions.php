@@ -74,11 +74,11 @@ require get_template_directory() . '/inc/editor.php';
 //ADD FONTS and VCU Brand Bar
 add_action('wp_enqueue_scripts', 'alt_lab_scripts');
 function alt_lab_scripts() {
-	$query_args = array(
-		'family' => 'Roboto:300,400,700|Old+Standard+TT:400,700|Oswald:400,500,700',
-		'subset' => 'latin,latin-ext',
-	);
-	wp_enqueue_style ( 'google_fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), null );
+	// $query_args = array(
+	// 	'family' => 'Roboto:300,400,700|Old+Standard+TT:400,700|Oswald:400,500,700',
+	// 	'subset' => 'latin,latin-ext',
+	// );
+	// wp_enqueue_style ( 'google_fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), null );
 
 	wp_enqueue_script( 'vcu_brand_bar', 'https:///branding.vcu.edu/bar/academic/latest.js', array(), '1.1.1', true );
 
@@ -173,8 +173,8 @@ function custom_breadcrumbs(){
                 if ( !isset( $parents ) ) $parents = null;
                 $parents .= '';
                 foreach ( $anc as $ancestor ) {
-                    $parents .= '<span class="item-parent item-parent-' . $ancestor . '"> <i class="fa fa-chevron-right" aria-hidden="true"></i> <a class="crumb bread-parent bread-parent-' . $ancestor . '" href="' . get_permalink( $ancestor ) . '" title="' . get_the_title($ancestor) . '">' . get_the_title($ancestor) . '</a></span>';
-                    $parents .= '<span class="separator separator-' . $ancestor . '"> <i class="fa fa-chevron-right" aria-hidden="true"></i> </span>';
+                    $parents .= '<span class="item-parent item-parent-' . $ancestor . '"> <span class="fa fa-chevron-right" aria-hidden="true"></span> <a class="crumb bread-parent bread-parent-' . $ancestor . '" href="' . get_permalink( $ancestor ) . '" title="' . get_the_title($ancestor) . '">' . get_the_title($ancestor) . '</a></span>';
+                    $parents .= '<span class="separator separator-' . $ancestor . '"> <span class="fa fa-chevron-right" aria-hidden="true"></span> </span>';
                 }
 
                 // Display parent pages
@@ -185,7 +185,7 @@ function custom_breadcrumbs(){
             } else {
 
                 // Just display current page if not parents
-                echo '<i class="fa fa-chevron-right" aria-hidden="true"></i> <span class="crumb item-current item-' . $post->ID . '">' . get_the_title() . '</span>';
+                echo '<span class="fa fa-chevron-right" aria-hidden="true"></span> <span class="crumb item-current item-' . $post->ID . '">' . get_the_title() . '</span>';
 
             }
     }

@@ -37,7 +37,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<?php if ( 'container' == $container ) : ?>
 			<div class="container" >
 		<?php endif; ?>
-        <button id="menu-hider" aria-label="Hide Courses Navigation Menu" title="Hide Courses Navigation Menu"><i class="fa fa-bars" aria-hidden="true"></i></button>
+        <button id="menu-hider" aria-label="Hide Courses Navigation Menu" title="Hide Courses Navigation Menu"><span class="fa fa-bars" aria-hidden="true"></span></button>
 					<!-- Your site title as branding in the menu -->
 					<?php if ( ! has_custom_logo() ) { ?>
 
@@ -56,24 +56,24 @@ $container = get_theme_mod( 'understrap_container_type' );
 						the_custom_logo();
 					} ?><!-- end custom logo -->
 					<?php custom_breadcrumbs();?> <!--BREADCRUMBS-->
-
+<!-- 
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
-				</button>
+				</button> -->
 
 				<!-- The WordPress Menu goes here -->
-				<?php wp_nav_menu(
-					array(
-						'theme_location'  => 'primary',
-						'container_class' => 'collapse navbar-collapse',
-						'container_id'    => 'navbarNavDropdown',
-						'menu_class'      => 'navbar-nav',
-						'fallback_cb'     => '',
-						'menu_id'         => 'main-menu',
-						'depth'           => 2,
-						'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
-					)
-				); ?>
+				<?php //wp_nav_menu(
+				// 	array(
+				// 		'theme_location'  => 'primary',
+				// 		'container_class' => 'collapse navbar-collapse',
+				// 		'container_id'    => 'navbarNavDropdown',
+				// 		'menu_class'      => 'navbar-nav',
+				// 		'fallback_cb'     => '',
+				// 		'menu_id'         => 'main-menu',
+				// 		'depth'           => 2,
+				// 		'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
+				// 	)
+				// ); ?>
 			<?php if ( 'container' == $container ) : ?>
 			</div><!-- .container -->
 			<?php endif; ?>
