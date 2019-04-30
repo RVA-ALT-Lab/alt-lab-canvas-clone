@@ -36,3 +36,41 @@ videos.forEach(function(video) {
       video.parentNode.insertBefore(wrapper, video); //insert wrapper      
       wrapper.appendChild(video); // move video into wrapper
 });
+
+
+const currentPage = document.querySelectorAll('h1')[0].innerHTML;
+const navList = document.querySelectorAll('#default-menu li');
+
+buildNav(navList, currentPage)
+
+function buildNav(navList, currentPage){
+  navList.forEach((list, index) => {
+    if (list.childNodes[0].innerHTML == currentPage){     
+      if (index-1 > 0){
+       let prevLink = navList[(index-1)].childNodes[0].href;  
+        console.log(prevLink)
+         setNavUrl('prev-btn',prevLink)
+      } else {
+        hideEmptyNav('prev-btn')
+      }
+       if (index+1 < navList.length){
+        let nextLink = navList[(index+1)].childNodes[0].href;
+         console.log(nextLink)
+          setNavUrl('next-btn',nextLink)
+       } else {
+          hideEmptyNav('next-btn')
+       }
+    }
+  })
+}
+
+
+function setNavUrl(id,url){
+ const nav = document.getElementById(id);
+ nav.href = url; 
+}
+
+function hideEmptyNav(id){
+  const nav = document.getElementById(id);
+  nav.classList.add('hidden')
+}

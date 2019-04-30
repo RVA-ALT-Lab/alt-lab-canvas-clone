@@ -26,10 +26,14 @@
 		?>
 
 	</div><!-- .entry-content -->
+	 <div id="sub-nav-footer"><!--page navigation holder for prev/next nav-->
+		    <a href="" id="prev-btn" class="sub-nav-btn">Previous</a>
+		    <a href="" id="next-btn" class="sub-nav-btn">Next</a>
+     </div>
 
 	<footer class="entry-footer">
 
-		<?php edit_post_link( __( 'Edit', 'understrap' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php //edit_post_link( __( 'Edit', 'understrap' ), '<span class="edit-link">', '</span>' ); ?>
 
 	</footer><!-- .entry-footer -->
 

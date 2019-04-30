@@ -323,7 +323,7 @@ blockquote.default{
   border-bottom: 1px solid #C7CDD1;
 }
 
-.edit-btn {
+.edit-btn, .sub-nav-btn {
     background: #f5f5f5;
     color: #2D3B45;
     border: 1px solid;
@@ -354,7 +354,25 @@ blockquote.default{
   margin-left: 5px;
 }
 
+#sub-nav-footer {
+  display: grid;
+  grid-template-columns: 130px auto 130px;
+  grid-template-rows: 50px;
+}
 
+#prev-btn {
+  grid-column-start: 1;
+  grid-column-end: 1;
+}
+
+#next-btn {
+  grid-column-start: 3;
+  grid-column-end: 3
+}
+
+.sub-nav-btn {
+  width: 120px;
+}
 
 //full size video 
 
