@@ -30,7 +30,8 @@
 }
 
 #the-menu {
-	background-color: #efefef !important;
+	background-color: #fff !important;
+  border-bottom: 1px solid #C7CDD1;
 }
 
 li.active {
@@ -55,7 +56,7 @@ li.active {
   margin-right: 20px;
   color: #4e4e4e;
   border: none;
-  background-color: #efefef;
+  background-color: #fff;
   transition: all .2s;
 }
 
@@ -319,7 +320,7 @@ blockquote.default{
 
 .edit-header {
   text-align: right;
-  border-bottom: 1px solid #efefef;
+  border-bottom: 1px solid #C7CDD1;
 }
 
 .edit-btn {
