@@ -27,8 +27,8 @@
 
 	</div><!-- .entry-content -->
 	 <div id="sub-nav-footer"><!--page navigation holder for prev/next nav-->
-		    <a href="" id="prev-btn" class="sub-nav-btn">Previous</a>
-		    <a href="" id="next-btn" class="sub-nav-btn">Next</a>
+		    <a href="" id="prev-btn" class="sub-nav-btn"><span class="fa fa-chevron-left"></span> Previous</a>
+		    <a href="" id="next-btn" class="sub-nav-btn">Next <span class="fa fa-chevron-right"></span></a>
      </div>
 
 	<footer class="entry-footer">

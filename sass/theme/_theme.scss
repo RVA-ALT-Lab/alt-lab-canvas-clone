@@ -348,7 +348,12 @@ blockquote.default{
     -ms-user-select: none;
     user-select: none;
     margin-bottom: 7px;
+    line-height: 1.4em;
 }
+
+.edit-btn:hover, .sub-nav-btn:hover {
+  background-color: #e8e8e8;
+} 
 
 .edit-btn i {
   margin-left: 5px;
@@ -365,10 +370,12 @@ blockquote.default{
   grid-column-end: 1;
 }
 
+
 #next-btn {
   grid-column-start: 3;
   grid-column-end: 3
 }
+
 
 .sub-nav-btn {
   width: 120px;
