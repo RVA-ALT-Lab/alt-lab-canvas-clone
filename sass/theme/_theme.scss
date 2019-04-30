@@ -360,6 +360,9 @@ blockquote.default{
 }
 
 #sub-nav-footer {
+  border-top: 1px solid #c7cdd1;
+  margin-top: 20px;
+  padding-top: 15px;
   display: grid;
   grid-template-columns: 130px auto 130px;
   grid-template-rows: 50px;

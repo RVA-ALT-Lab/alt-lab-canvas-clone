@@ -46,7 +46,7 @@ buildNav(navList, currentPage)
 function buildNav(navList, currentPage){
   navList.forEach((list, index) => {
     if (list.childNodes[0].innerHTML == currentPage){     
-      if (index-1 > 0){
+      if (index-1 > -1){
        let prevLink = navList[(index-1)].childNodes[0].href;  
         console.log(prevLink)
          setNavUrl('prev-btn',prevLink)
