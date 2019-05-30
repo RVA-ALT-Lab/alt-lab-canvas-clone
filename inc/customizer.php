@@ -54,32 +54,33 @@ if ( ! function_exists( 'understrap_theme_customize_register' ) ) {
              
         }
 
-		$wp_customize->add_setting( 'understrap_container_type', array(
-			'default'           => 'container',
-			'type'              => 'theme_mod',
-			'sanitize_callback' => 'understrap_theme_slug_sanitize_select',
-			'capability'        => 'edit_theme_options',
-		) );
+		// $wp_customize->add_setting( 'understrap_container_type', array(
+		// 	'default'           => 'container',
+		// 	'type'              => 'theme_mod',
+		// 	'sanitize_callback' => 'understrap_theme_slug_sanitize_select',
+		// 	'capability'        => 'edit_theme_options',
+		// ) );
 
-		$wp_customize->add_control(
-			new WP_Customize_Control(
-				$wp_customize,
-				'understrap_container_type', array(
-					'label'       => __( 'Container Width', 'understrap' ),
-					'description' => __( "Choose between Bootstrap's container and container-fluid", 'understrap' ),
-					'section'     => 'understrap_theme_layout_options',
-					'settings'    => 'understrap_container_type',
-					'type'        => 'select',
-					'choices'     => array(
-						'container'       => __( 'Fixed width container', 'understrap' ),
-						'container-fluid' => __( 'Full width container', 'understrap' ),
-					),
-					'priority'    => '10',
-				)
-			) );
+		// $wp_customize->add_control(
+		// 	new WP_Customize_Control(
+		// 		$wp_customize,
+		// 		'understrap_container_type', array(
+		// 			'label'       => __( 'Container Width', 'understrap' ),
+		// 			'description' => __( "Choose between Bootstrap's container and container-fluid", 'understrap' ),
+		// 			'section'     => 'understrap_theme_layout_options',
+		// 			'settings'    => 'understrap_container_type',
+		// 			'type'        => 'select',
+		// 			'choices'     => array(
+		// 				'container'       => __( 'Fixed width container', 'understrap' ),
+		// 				'container-fluid' => __( 'Full width container', 'understrap' ),
+		// 			),
+		// 			'priority'    => '10',
+		// 		)
+		// 	) );
 
-		$wp_customize->add_setting( 'understrap_sidebar_position', array(
-			'default'           => 'right',
+			//add custom logo
+		$wp_customize->add_setting( 'logo_in_header_menu', array(
+			'default'           => 'none',
 			'type'              => 'theme_mod',
 			'sanitize_callback' => 'sanitize_text_field',
 			'capability'        => 'edit_theme_options',
@@ -88,21 +89,44 @@ if ( ! function_exists( 'understrap_theme_customize_register' ) ) {
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
-				'understrap_sidebar_position', array(
-					'label'       => __( 'Sidebar Positioning', 'understrap' ),
-					'description' => __( "Set sidebar's default position. Can either be: right, left, both or none. Note: this can be overridden on individual pages.",
+				'logo_in_header_menu', array(
+					'label'       => __( 'Logo', 'understrap' ),
+					'description' => __( "Set a custom logo in the header menu",
 					'understrap' ),
 					'section'     => 'understrap_theme_layout_options',
-					'settings'    => 'understrap_sidebar_position',
+					'settings'    => 'logo_in_header_menu',
 					'type'        => 'select',
 					'sanitize_callback' => 'understrap_theme_slug_sanitize_select',
 					'choices'     => array(
-						'right' => __( 'Right sidebar', 'understrap' ),
-						'left'  => __( 'Left sidebar', 'understrap' ),
-						'both'  => __( 'Left & Right sidebars', 'understrap' ),
-						'none'  => __( 'No sidebar', 'understrap' ),
+						'altlab-menu-logo' => __( 'ALT Lab logo', 'understrap' ),
+						'none'  => __( 'No logo', 'understrap' ),
 					),
 					'priority'    => '20',
+				)
+			) );
+
+			//add custom background
+		$wp_customize->add_setting( 'body_background_choice', array(
+			'default'           => 'none',
+			'type'              => 'theme_mod',
+			'sanitize_callback' => 'understrap_theme_slug_sanitize_select',
+			'capability'        => 'edit_theme_options',
+		) );
+
+		$wp_customize->add_control(
+			new WP_Customize_Control(
+				$wp_customize,
+				'body_background_choice', array(
+					'label'       => __( 'Body Background', 'understrap' ),
+					'description' => __( "Choose your body background option", 'understrap' ),
+					'section'     => 'understrap_theme_layout_options',
+					'settings'    => 'body_background_choice',
+					'type'        => 'select',
+					'choices'     => array(
+						'altlab-edgebars'       => __( 'ALT Lab yellow sidebars', 'understrap' ),
+						'none' => __( 'No background', 'understrap' ),
+					),
+					'priority'    => '10',
 				)
 			) );
 	}

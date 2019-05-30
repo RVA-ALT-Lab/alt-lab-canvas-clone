@@ -133,6 +133,20 @@ p {
 	background-attachment: fixed;
 }
 
+.altlab-edgebars {
+  border-right: 2vw solid #ffb300;
+  border-left: 2vw solid #ffb300;
+}
+
+.altlab-menu-logo {
+  background-image: url(../imgs/altlab-branding-logo.svg);
+	background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+  width: auto;
+  height: 40px;
+  flex: auto;
+}
 
 //SUB ORGS
 .jumbotron.water {

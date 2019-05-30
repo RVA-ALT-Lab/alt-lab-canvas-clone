@@ -11,7 +11,7 @@ get_header();
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
-<div class="wrapper" id="page-wrapper">
+<div class="wrapper <?php echo get_theme_mod( 'body_background_choice' );?>" id="page-wrapper">
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content">
 
