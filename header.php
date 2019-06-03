@@ -77,7 +77,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<?php if ( 'container' == $container ) : ?>
 					
 			</div><!-- .container -->
-				<?php echo customizer_logo_html(get_theme_mod( 'logo_in_header_menu' ));?>
+				<?php echo customizer_logo_html();?>
 			<?php endif; ?>
 
 		</nav><!-- .site-navigation -->

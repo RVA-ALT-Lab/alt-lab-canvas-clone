@@ -191,7 +191,8 @@ function custom_breadcrumbs(){
     }
 
 
-function customizer_logo_html($choice){
+function customizer_logo_html(){
+  $choice = get_theme_mod( 'logo_in_header_menu' );
    if ($choice) {
     if ($choice == 'altlab-menu-logo') {
       return '<a href="https://altlab.vcu.edu"><div class="altlab-menu-logo"></div>';
