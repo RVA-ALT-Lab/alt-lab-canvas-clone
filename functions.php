@@ -189,3 +189,15 @@ function custom_breadcrumbs(){
 
             }
     }
+
+
+function customizer_logo_html($choice){
+   if ($choice) {
+    if ($choice == 'altlab-menu-logo') {
+      return '<a href="https://altlab.vcu.edu"><div class="altlab-menu-logo"></div>';
+    } if ($choice == 'altlab-menu-logo') {
+       return '<a href="https://online.vcu.edu"><div class="online-menu-logo"></div>';
+    }
+   }
+
+}
