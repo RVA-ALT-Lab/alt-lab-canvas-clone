@@ -174,14 +174,14 @@ function custom_breadcrumbs(){
                 $parents .= '';
                 foreach ( $anc as $ancestor ) {
                     $parents .= '<span class="item-parent item-parent-' . $ancestor . '"> <span class="fa fa-chevron-right" aria-hidden="true"></span> <a class="crumb bread-parent bread-parent-' . $ancestor . '" href="' . get_permalink( $ancestor ) . '" title="' . get_the_title($ancestor) . '">' . get_the_title($ancestor) . '</a></span>';
-                    $parents .= '<span class="separator separator-' . $ancestor . '"> <span class="fa fa-chevron-right" aria-hidden="true"></span> </span>';
+                    $parents .= '<span class="separator separator-' . $ancestor . '"></span>';
                 }
 
                 // Display parent pages
                 echo $parents;
 
                 // Current page
-                echo '<span class="crumb item-current item-' . $post->ID . '"><strong><span title="' . get_the_title() . '"> ' . get_the_title() . '</strong></span>';
+                echo '<span class="fa fa-chevron-right" aria-hidden="true"></span><span class="crumb item-current item-' . $post->ID . '"><strong><span title="' . get_the_title() . '"> ' . get_the_title() . '</strong></span>';
             } else {
 
                 // Just display current page if not parents
