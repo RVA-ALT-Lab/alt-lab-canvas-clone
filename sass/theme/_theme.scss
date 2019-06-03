@@ -70,6 +70,14 @@ li.active {
   color: #9a9a9e;
 }
 
+//Trying to get rid of chevron on parent of nested items
+.item-parent .fa-chevron-right {
+  background: #ff0000;
+  // display: none;
+}
+
+
+
 //************************BASIC CONTENT CHOICES************************
 article a {
 	text-decoration: underline;
@@ -133,17 +141,29 @@ p {
 	background-attachment: fixed;
 }
 
+//CUSTOM BACKGROUNDS
 .altlab-edgebars {
   border-right: 2vw solid #ffb300;
   border-left: 2vw solid #ffb300;
 }
 
+//CUSTOM LOGOS
 .altlab-menu-logo {
-  background-image: url(../imgs/altlab-branding-logo.svg);
+  background-image: url(../imgs/altlab-blkgld180-logo.svg);
 	background-repeat: no-repeat;
-  background-position: right;
   background-size: contain;
-  width: auto;
+  background-position: right;
+  width: 180px;
+  height: 40px;
+  flex: auto;
+}
+
+.online-vcu-menu-logo {
+  background-image: url(../imgs/online-vcu-blkgld180-logo.svg);
+	background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+  width: 180px;
   height: 40px;
   flex: auto;
 }

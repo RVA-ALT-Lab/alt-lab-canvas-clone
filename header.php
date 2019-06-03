@@ -75,8 +75,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 				// 	)
 				// ); ?>
 			<?php if ( 'container' == $container ) : ?>
-					<div class="<?php echo get_theme_mod( 'logo_in_header_menu' );?>"></div>
+					
 			</div><!-- .container -->
+				<div class="<?php echo get_theme_mod( 'logo_in_header_menu' );?>"></div>
 			<?php endif; ?>
 
 		</nav><!-- .site-navigation -->

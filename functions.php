@@ -181,7 +181,7 @@ function custom_breadcrumbs(){
                 echo $parents;
 
                 // Current page
-                echo '<span class="crumb item-current item-' . $post->ID . '"><span title="' . get_the_title() . '"> ' . get_the_title() . '</strong></span>';
+                echo '<span class="crumb item-current item-' . $post->ID . '"><strong><span title="' . get_the_title() . '"> ' . get_the_title() . '</strong></span>';
             } else {
 
                 // Just display current page if not parents

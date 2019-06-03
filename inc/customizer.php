@@ -99,6 +99,7 @@ if ( ! function_exists( 'understrap_theme_customize_register' ) ) {
 					'sanitize_callback' => 'understrap_theme_slug_sanitize_select',
 					'choices'     => array(
 						'altlab-menu-logo' => __( 'ALT Lab logo', 'understrap' ),
+						'online-vcu-menu-logo' => __( 'Online@VCU logo', 'understrap' ),
 						'none'  => __( 'No logo', 'understrap' ),
 					),
 					'priority'    => '20',
