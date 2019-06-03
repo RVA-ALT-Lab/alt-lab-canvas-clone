@@ -195,9 +195,9 @@ function customizer_logo_html(){
   $choice = get_theme_mod( 'logo_in_header_menu' );
    if ($choice) {
     if ($choice == 'altlab-menu-logo') {
-      return '<a href="https://altlab.vcu.edu"><div class="altlab-menu-logo"></div>';
+      return '<a href="https://altlab.vcu.edu"><div class="altlab-menu-logo"></div></a>';
     } if ($choice == 'online-vcu-menu-logo') {
-       return '<a href="https://online.vcu.edu"><div class="online-vcu-menu-logo"></div>';
+       return '<a href="https://online.vcu.edu"><div class="online-vcu-menu-logo"></div></a>';
     }
    }
 
