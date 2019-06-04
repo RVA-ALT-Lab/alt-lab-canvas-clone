@@ -38,10 +38,18 @@ videos.forEach(function(video) {
 });
 
 
-const currentPage = document.querySelectorAll('h1')[0].innerHTML;
-const navList = document.querySelectorAll('#default-menu li');
 
-buildNav(navList, currentPage)
+document.addEventListener("DOMContentLoaded", function(){
+  const currentPage = document.querySelectorAll('h1')[0].innerHTML;
+  if (document.getElementById('default-menu')){
+    var navList = document.querySelectorAll('#default-menu li');
+    buildNav(navList, currentPage)
+} else {
+    var navList = document.querySelectorAll('#left-sidebar li');
+    buildNav(navList, currentPage)
+}
+    
+});
 
 function buildNav(navList, currentPage){
   navList.forEach((list, index) => {

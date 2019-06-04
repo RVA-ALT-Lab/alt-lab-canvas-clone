@@ -85,52 +85,6 @@ function alt_lab_scripts() {
 	wp_enqueue_script( 'alt_lab_js', get_template_directory_uri() . '/js/alt-lab.js', array(), '1.1.1', true );
     }
 
-//add footer widget areas
-if ( function_exists('register_sidebar') )
-  register_sidebar(array(
-    'name' => 'Footer - far left',
-    'id' => 'footer-far-left',
-    'before_widget' => '<div class = "widgetizedArea">',
-    'after_widget' => '</div>',
-    'before_title' => '<h3>',
-    'after_title' => '</h3>',
-  )
-);
-
-if ( function_exists('register_sidebar') )
-  register_sidebar(array(
-    'name' => 'Footer - medium left',
-    'id' => 'footer-med-left',
-    'before_widget' => '<div class = "widgetizedArea">',
-    'after_widget' => '</div>',
-    'before_title' => '<h3>',
-    'after_title' => '</h3>',
-  )
-);
-
-
-if ( function_exists('register_sidebar') )
-  register_sidebar(array(
-    'name' => 'Footer - medium right',
-    'id' => 'footer-med-right',
-    'before_widget' => '<div class = "widgetizedArea">',
-    'after_widget' => '</div>',
-    'before_title' => '<h3>',
-    'after_title' => '</h3>',
-  )
-);
-
-if ( function_exists('register_sidebar') )
-  register_sidebar(array(
-    'name' => 'Footer - far right',
-    'id' => 'footer-far-right',
-    'before_widget' => '<div class = "widgetizedArea">',
-    'after_widget' => '</div>',
-    'before_title' => '<h3>',
-    'after_title' => '</h3>',
-  )
-);
-
 //set a path for IMGS
 
   if( !defined('THEME_IMG_PATH')){

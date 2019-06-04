@@ -21,21 +21,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<div class="row" id="footer">
 
 
-							<div class="footer-widget col-md-3">
-								<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Footer - far left") ) : ?><?php endif;?>
-							</div>
-							<div class="footer-widget col-md-3">
-								<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Footer - medium left") ) : ?><?php endif;?>
-							</div>
-							<div class="footer-widget col-md-3">
-								<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Footer - medium right") ) : ?><?php endif;?>
-							</div>
-							<div class="footer-widget col-md-3">
-								<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Footer - far right") ) : ?><?php endif;?>
-							</div>	
-											
-
-
 		</div><!-- row end -->
 
 	</div><!-- container end -->
