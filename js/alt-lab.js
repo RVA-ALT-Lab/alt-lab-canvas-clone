@@ -87,7 +87,7 @@ function hideEmptyNav(id){
 function newBreadCrumbBuilder(currentItem, html, first){
   if (first === true){
     console.log(currentItem)
-  html = currentItem.firstChild.innerHTML + html;
+  html = '<span class="crumb-finalchild">' + currentItem.firstChild.innerHTML + '</span>' + html;
   }
   let grandParentItem = currentItem.parentNode.parentNode;
   let grandParentTag = grandParentItem.tagName;
@@ -98,7 +98,7 @@ function newBreadCrumbBuilder(currentItem, html, first){
     } 
   if (grandParentTag === 'LI') {
     //console.log(grandParentItem.firstChild)
-    html = '<a href="' +grandParentItem.firstChild + '">' + grandParentItem.firstChild.innerText + '</a> <span class="fa fa-chevron-right" aria-hidden="true"></span>  ' + html;
+    html = '<a href="' +grandParentItem.firstChild + '" class="crumb">' + grandParentItem.firstChild.innerText + '</a> <span class="fa fa-chevron-right" aria-hidden="true"></span>' +  html;
     newBreadCrumbBuilder(grandParentItem, html, false);
      }
   }
