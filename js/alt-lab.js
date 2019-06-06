@@ -86,19 +86,19 @@ function hideEmptyNav(id){
 
 function newBreadCrumbBuilder(currentItem, html, first){
   if (first === true){
-  html = currentItem.innerHTML + html;
+    console.log(currentItem)
+  html = currentItem.firstChild.innerHTML + html;
   }
   let grandParentItem = currentItem.parentNode.parentNode;
   let grandParentTag = grandParentItem.tagName;
   let parentItem = currentItem.parentNode;
    if (grandParentTag != 'LI'){      
-      console.log(html);
       let target = document.getElementById('nav-title');
       target.insertAdjacentHTML('afterend', html);
     } 
   if (grandParentTag === 'LI') {
-    console.log(grandParentItem.firstChild)
-    html = '<a href="' +grandParentItem.firstChild + '">' + grandParentItem.firstChild.innerHTML + '</a> <span class="fa fa-chevron-right" aria-hidden="true"></span>  ' + html;
+    //console.log(grandParentItem.firstChild)
+    html = '<a href="' +grandParentItem.firstChild + '">' + grandParentItem.firstChild.innerText + '</a> <span class="fa fa-chevron-right" aria-hidden="true"></span>  ' + html;
     newBreadCrumbBuilder(grandParentItem, html, false);
      }
   }
