@@ -41,7 +41,8 @@ videos.forEach(function(video) {
 
 document.addEventListener("DOMContentLoaded", function(){
   const currentPage = document.querySelectorAll('h1')[0].innerHTML;
-  if (document.getElementById('default-menu')){
+  newBreadCrumbBuilder(document.querySelectorAll('#left-sidebar li .current-menu-item')[0],'', true);
+  if (document.getElementById('default-menu')){//if default menu
     var navList = document.querySelectorAll('#default-menu li');
     buildNav(navList, currentPage)
 } else {
@@ -82,3 +83,22 @@ function hideEmptyNav(id){
   const nav = document.getElementById(id);
   nav.classList.add('hidden')
 }
+
+function newBreadCrumbBuilder(currentItem, html, first){
+  if (first === true){
+  html = currentItem.innerHTML + html;
+  }
+  let grandParentItem = currentItem.parentNode.parentNode;
+  let grandParentTag = grandParentItem.tagName;
+  let parentItem = currentItem.parentNode;
+   if (grandParentTag != 'LI'){      
+      console.log(html);
+      let target = document.getElementById('nav-title');
+      target.insertAdjacentHTML('afterend', html);
+    } 
+  if (grandParentTag === 'LI') {
+    console.log(grandParentItem.firstChild)
+    html = '<a href="' +grandParentItem.firstChild + '">' + grandParentItem.firstChild.innerHTML + '</a> <span class="fa fa-chevron-right" aria-hidden="true"></span>  ' + html;
+    newBreadCrumbBuilder(grandParentItem, html, false);
+     }
+  }
