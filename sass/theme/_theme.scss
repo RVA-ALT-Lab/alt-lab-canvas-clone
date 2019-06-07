@@ -443,15 +443,23 @@ blockquote.default{
 
 
 //expanding menu
+#left-sidebar ul {
+  padding-inline-start: 20px;
+   transition: all .3s ease;
+}
+
 .hidden {
   height: 0;
   opacity: 0;
+  width: 0;
+  overflow: hidden;
+  transition: all .3s ease;
 }
 
 .expand {
   display: inline-block;
   background-color: red;
   margin-left: 10px;
-  width: 20px;
+  width: 40px;
   text-align: center;
 }
