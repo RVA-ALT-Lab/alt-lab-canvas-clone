@@ -440,3 +440,18 @@ blockquote.default{
     width:100%;
     position:absolute;
 }
+
+
+//expanding menu
+.hidden {
+  height: 0;
+  opacity: 0;
+}
+
+.expand {
+  display: inline-block;
+  background-color: red;
+  margin-left: 10px;
+  width: 20px;
+  text-align: center;
+}

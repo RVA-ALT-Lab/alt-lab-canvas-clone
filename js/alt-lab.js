@@ -42,6 +42,7 @@ videos.forEach(function(video) {
 document.addEventListener("DOMContentLoaded", function(){
   const currentPage = document.querySelectorAll('h1')[0].innerHTML;
   newBreadCrumbBuilder(document.querySelectorAll('#left-sidebar li .current-menu-item')[0],'', true);
+  makeExpandingMenu(document.querySelectorAll('#left-sidebar li'), document.querySelectorAll('#left-sidebar ul')[0]);
   if (document.getElementById('default-menu')){//if default menu
     var navList = document.querySelectorAll('#default-menu li');
     buildNav(navList, currentPage)
@@ -84,21 +85,64 @@ function hideEmptyNav(id){
   nav.classList.add('hidden')
 }
 
+
+//BREAD CRUMB BAKER
 function newBreadCrumbBuilder(currentItem, html, first){
-  if (first === true){
-    console.log(currentItem)
-  html = '<span class="crumb-finalchild">' + currentItem.firstChild.innerHTML + '</span>' + html;
-  }
-  let grandParentItem = currentItem.parentNode.parentNode;
-  let grandParentTag = grandParentItem.tagName;
-  let parentItem = currentItem.parentNode;
-   if (grandParentTag != 'LI'){      
-      let target = document.getElementById('nav-title');
-      target.insertAdjacentHTML('afterend', html);
-    } 
-  if (grandParentTag === 'LI') {
-    //console.log(grandParentItem.firstChild)
-    html = '<a href="' +grandParentItem.firstChild + '" class="crumb">' + grandParentItem.firstChild.innerText + '</a> <span class="fa fa-chevron-right" aria-hidden="true"></span>' +  html;
-    newBreadCrumbBuilder(grandParentItem, html, false);
+  if (currentItem != null){
+    if (first === true ){
+      console.log(currentItem)
+    html = '<span class="crumb-finalchild">' + currentItem.firstChild.innerHTML + '</span>' + html;
+    }
+    let grandParentItem = currentItem.parentNode.parentNode;
+    let grandParentTag = grandParentItem.tagName;
+    let parentItem = currentItem.parentNode;
+     if (grandParentTag != 'LI'){      
+        let target = document.getElementById('nav-title');
+        target.insertAdjacentHTML('afterend', html);
+      } 
+    if (grandParentTag === 'LI') {
+      //console.log(grandParentItem.firstChild)
+      html = '<a href="' +grandParentItem.firstChild + '" class="crumb">' + grandParentItem.firstChild.innerText + '</a> <span class="fa fa-chevron-right" aria-hidden="true"></span>' +  html;
+      newBreadCrumbBuilder(grandParentItem, html, false);
+       }
      }
   }
+
+
+
+  //EXPANDING CHILD MAKER
+  function makeExpandingMenu(lis, topMenu){
+    lis.forEach((li, index) => {
+      if (li.childNodes.length > 1 && li.parentNode.parentNode.parentNode.tagName != 'UL' ) {
+          var button = document.createElement("button"); // Create a <li> node
+          var textnode = document.createTextNode("+"); // Create a text node
+          button.appendChild(textnode);
+          button.classList.add("expand"); // Append the text to <li>
+          button.setAttribute("aria-pressed", "false");
+          button.setAttribute("id", "button-expand-" + index);
+          li.childNodes[0].insertAdjacentElement("afterend", button);
+        } else {
+          if (li.parentNode != topMenu && li.parentNode.parentNode.parentNode === topMenu){
+            console.log(li.parentNode.parentNode.parentNode);
+            console.log(topMenu);
+            li.parentNode.classList.add('hidden')
+          }
+        }
+    });
+
+    let buttons = document.querySelectorAll("button");
+
+    buttons.forEach(function(button) {
+      //button.addEventListener("click", buttonClick(e));
+      button.onclick = function(e) {
+        buttonClick(this.id, this.parentElement);
+      };
+    });
+
+    function buttonClick(id, parent) {
+      console.log(parent.childNodes);
+      parent.childNodes[3].classList.toggle("hidden");
+    }
+
+}
+
