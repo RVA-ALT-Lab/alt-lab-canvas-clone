@@ -42,7 +42,7 @@ videos.forEach(function(video) {
 document.addEventListener("DOMContentLoaded", function(){
   const currentPage = document.querySelectorAll('h1')[0].innerHTML;
   newBreadCrumbBuilder(document.querySelectorAll('#left-sidebar li .current-menu-item')[0],'', true);
-  makeExpandingMenu(document.querySelectorAll('#left-sidebar li'), document.querySelectorAll('#left-sidebar ul')[0]);
+  makeExpandingMenu(document.querySelectorAll('#left-sidebar li'), document.querySelectorAll('#left-sidebar ul')[0]), currentPage;
   if (document.getElementById('default-menu')){//if default menu
     var navList = document.querySelectorAll('#default-menu li');
     buildNav(navList, currentPage)
@@ -111,7 +111,7 @@ function newBreadCrumbBuilder(currentItem, html, first){
 
 
   //EXPANDING CHILD MAKER
-  function makeExpandingMenu(lis, topMenu){
+  function makeExpandingMenu(lis, topMenu, currentPage){
     lis.forEach((li, index) => {
       if (li.childNodes.length > 1 && li.parentNode.parentNode.parentNode.tagName != 'UL' ) {
           var button = document.createElement("button"); // Create a <li> node
@@ -122,9 +122,9 @@ function newBreadCrumbBuilder(currentItem, html, first){
           button.setAttribute("id", "button-expand-" + index);
           li.childNodes[0].insertAdjacentElement("afterend", button);
         } else {
-          if (li.parentNode != topMenu && li.parentNode.parentNode.parentNode === topMenu){
-            console.log(li.parentNode.parentNode.parentNode);
-            console.log(topMenu);
+          if (li.parentNode != topMenu && li.parentNode.parentNode.parentNode.id === topMenu.id && !li.classList.contains('current-menu-ancestor')){
+            console.log(li);
+            console.log(li.parentNode.parentNode.parentNode.id);
             li.parentNode.classList.add('hidden')
           }
         }
@@ -140,7 +140,6 @@ function newBreadCrumbBuilder(currentItem, html, first){
     });
 
     function buttonClick(id, parent) {
-      console.log(parent.childNodes);
       parent.childNodes[3].classList.toggle("hidden");
     }
 
