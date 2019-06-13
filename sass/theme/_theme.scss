@@ -153,7 +153,7 @@ p {
   background-image: url(../imgs/altlab-blkgld180-logo.svg);
 	background-repeat: no-repeat;
   background-size: contain;
-  background-position: right;
+  background-position: left;
   width: 180px;
   height: 40px;
   flex: auto;
@@ -163,7 +163,7 @@ p {
   background-image: url(../imgs/online-vcu-blkgld180-logo.svg);
 	background-repeat: no-repeat;
   background-size: contain;
-  background-position: right;
+  background-position: left;
   width: 180px;
   height: 40px;
   flex: auto;
@@ -323,10 +323,10 @@ blockquote.default{
 
 #left-sidebar li a {
   display: inline;
-  // width: 100%;
-  // height: auto;
   padding: 5px 9px;
   border-radius: 3px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 #left-sidebar li a[aria-current] {
