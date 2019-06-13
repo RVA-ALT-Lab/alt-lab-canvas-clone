@@ -316,6 +316,9 @@ blockquote.default{
 
 #left-sidebar li {
   margin: 8px 0;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  padding: 2px;
 }
 
 #left-sidebar li a {
@@ -329,11 +332,11 @@ blockquote.default{
 #left-sidebar li a[aria-current] {
   background-color: $dark-gray;
   color: #fff;
-  font-weight: 600;
+  // font-weight: 600;
 }
 
 #left-sidebar a:hover {
-    background: #f2f2f2;
+    background: #e2e2e2;
 }
 
 #left-sidebar ul.children {
@@ -445,7 +448,7 @@ blockquote.default{
 //expanding menu
 #left-sidebar ul {
   padding-inline-start: 20px;
-   transition: all .3s ease;
+  transition: all .3s ease;
 }
 
 .hidden {
@@ -458,8 +461,8 @@ blockquote.default{
 
 .expand {
   display: block;
-  background-color: #F2F2F2;
-  width: 40px;
+  background-color: #e9e9e9;
+  // width: 40px;
   text-align: center;
   float: right;
   margin-left: -50%;
