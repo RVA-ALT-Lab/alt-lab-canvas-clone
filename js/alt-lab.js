@@ -122,7 +122,7 @@ function newBreadCrumbBuilder(currentItem, html, first){
           button.setAttribute("id", "button-expand-" + index);
           li.childNodes[0].insertAdjacentElement("afterend", button);
         } else {
-          if (li.parentNode != topMenu && li.parentNode.parentNode.parentNode.id === topMenu.id && !li.classList.contains('current-menu-ancestor')){
+          if (li.parentNode != topMenu && li.parentNode.parentNode.parentNode.id === topMenu.id && !li.classList.contains('current-menu-ancestor') && !li.classList.contains('current-menu-item')){
             console.log(li);
             console.log(li.parentNode.parentNode.parentNode.id);
             li.parentNode.classList.add('hidden')
