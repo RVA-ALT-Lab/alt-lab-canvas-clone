@@ -41,21 +41,23 @@ videos.forEach(function(video) {
 
 document.addEventListener("DOMContentLoaded", function(){
   const currentPage = document.querySelectorAll('h1')[0].innerHTML;
+  const currentURL = window.location.href;
   newBreadCrumbBuilder(document.querySelectorAll('#left-sidebar li .current-menu-item')[0],'', true);
   makeExpandingMenu(document.querySelectorAll('#left-sidebar li'), document.querySelectorAll('#left-sidebar ul')[0]), currentPage;
   if (document.getElementById('default-menu')){//if default menu
     var navList = document.querySelectorAll('#default-menu li');
-    buildNav(navList, currentPage)
+    buildNav(navList, currentURL)
 } else {
     var navList = document.querySelectorAll('#left-sidebar li');
-    buildNav(navList, currentPage)
+    buildNav(navList, currentURL)
 }
     
 });
 
-function buildNav(navList, currentPage){
+function buildNav(navList, currentURL){
   navList.forEach((list, index) => {
-    if (list.childNodes[0].innerHTML == currentPage){     
+    if (list.childNodes[0].href == currentURL){
+      console.log(currentURL)
       if (index-1 > -1){
        let prevLink = navList[(index-1)].childNodes[0].href;  
         console.log(prevLink)
