@@ -23,8 +23,8 @@ let navHider = document.getElementById('menu-hider');
 navHider.addEventListener('click', menuClassChanger);
 
 function menuClassChanger (){
-	let menu = document.getElementById('left-sidebar');
-	menu.classList.toggle("hidden")
+  let menu = document.getElementById('left-sidebar');
+  menu.classList.toggle("hidden")
 }
 
 //full size video
@@ -137,7 +137,8 @@ function newBreadCrumbBuilder(currentItem, html, first){
                 currentMenuSibling = true
               }
             })
-            if (!currentMenuSibling){
+            if (!currentMenuSibling && !li.parentNode.parentNode.classList.contains("current-menu-item")){
+              console.log(li.parentNode)
               li.parentNode.classList.add('hidden')
             }
           }
