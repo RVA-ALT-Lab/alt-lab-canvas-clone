@@ -19,13 +19,21 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 <div class="col-md-3 widget-area" id="left-sidebar" role="complementary"> <!--was col-md-4-->
 	<?php endif; ?>
 <?php 
+
+//sidebar widget set? show that
 if (is_active_sidebar('left-sidebar' ))	{
 	  dynamic_sidebar( 'left-sidebar' ); 
-	} else {
+	}  
+//primary nav set? show that	
+else if ( has_nav_menu( 'primary' ) ) {
+     wp_nav_menu( array( 'theme_location' => 'primary' ) );
+}
+//fall back to page list and show additional info for admins
+	else {
 	   if ( current_user_can('editor') || current_user_can('administrator') ){
 	   	 echo '<div class="alert alert-info" role="alert" aria-atomic="true">Put a Menu in the left sidebar as a widget to further customize.</div>';//alert about using the menu to do fancier stuff
 	   }
-	  echo '<ul id="default-menu" aria-role"navigation">';
+	  echo '<ul id="default-menu" aria-role="navigation">';
 	  $args = array(
         'depth'        => 0,
          'title_li'     => '',
