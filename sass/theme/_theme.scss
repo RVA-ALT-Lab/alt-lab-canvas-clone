@@ -471,3 +471,21 @@ blockquote.default{
   border-radius: 4px;
   // margin-top: 2em;
 }
+
+
+.highlight {
+  background-color: #d1ecf1;
+  padding: 1px 3px
+}
+
+.button {
+  border: 1px solid;
+  display: inline-block;
+  transition: all .3s;
+  cursor: hand;
+  width: 230px;
+}
+
+.button:hover {
+  background-color: #d1ecf1;
+}
