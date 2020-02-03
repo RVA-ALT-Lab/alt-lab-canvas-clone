@@ -370,11 +370,11 @@ blockquote.default{
 	float: right;
 }
 
-#left-sidebar aside:last-child a:hover {
+#left-sidebar aside:last-child:not(:first-child) a:hover {
 	background-color: transparent;
 }
 
-#left-sidebar aside:last-child:hover {
+#left-sidebar aside:last-child:not(:first-child):hover {
 	background-color: #e8e8e8;
 }
 
