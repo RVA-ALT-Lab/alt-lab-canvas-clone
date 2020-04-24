@@ -41,7 +41,8 @@ videos.forEach(function(video) {
 
 document.addEventListener("DOMContentLoaded", function(){
   const currentPage = document.querySelectorAll('h1')[0].innerHTML;
-  const currentURL = window.location.href;
+  const fullURL = window.location.href;
+  const currentURL = fullURL.split("?")[0];//chop at ?
   newBreadCrumbBuilder(document.querySelectorAll('#left-sidebar li .current-menu-item')[0],'', true);
   makeExpandingMenu(document.querySelectorAll('#left-sidebar li'), document.querySelectorAll('#left-sidebar ul')[0]), currentPage;
   if (document.getElementById('default-menu')){//if default menu
